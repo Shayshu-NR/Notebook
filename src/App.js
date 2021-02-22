@@ -9,6 +9,10 @@ import Footer from './Components/Footer'
 function App() {
   const [showAddNote, setShowAddNote] = useState(false)
 
+  const addNote = async (Note) => {
+    console.log(Note)
+  }
+
   return (
     <Router>
       <body>
@@ -28,7 +32,9 @@ function App() {
           <li> </li>
         </ul>
         <Footer onAdd={() => setShowAddNote(!showAddNote)} showAddNote={showAddNote} />
-        {showAddNote && <AddPage />}
+        <br></br>
+        {showAddNote &&
+          <AddPage onAdd={addNote}/>}
 
       </body>
     </Router>
